@@ -9,12 +9,17 @@ root.geometry("700x300")
 
 #verb flashcard function
 def verbs():
-    pass
+    verb_frame.pack(fill="both", expand=1)
 
 #phrase flashcard function
 def phrases():
-    pass    
+    phrases_frame.pack(fill="both", expand=1)    
 
+
+def hide_all_frames():
+    #hide frames
+    verb_frame.pack_forget()
+    phrases_frame.pack_forget()
 
 #create menu
 main_menu = Menu(root)
@@ -26,6 +31,9 @@ main_menu.add_cascade(label="Options", menu=verbs_menu)
 verbs_menu.add_command(label="Verbs", command = verbs)
 verbs_menu.add_command(label="Phrases", command = phrases)
 
+#create frames
+verb_frame = Frame(root, width=700, height=300)
+phrases_frame = Frame(root, width=700, height=300)
 
 
 #keep track of score
